@@ -1,0 +1,42 @@
+[
+    {
+        "genre_id": "ca31e908-b561-4947-a7cc-d6b1cc6a256f",
+        "name": "R&B (Rhythm and Blues)"
+    },
+    {
+        "genre_id": "83823c8e-5fb5-4b70-af09-972e403d9e8c",
+        "name": "Hip hop"
+    },
+    {
+        "genre_id": "71764c60-4c1e-4807-891e-5357d5d037b8",
+        "name": "Alternative"
+    },
+    {
+        "genre_id": "3865cb7c-45e6-4781-8441-4aff56d4de81",
+        "name": "Electronic"
+    },
+    {
+        "genre_id": "a5ebc988-1485-4d4b-b2ac-f3dc069a1bdb",
+        "name": "Country"
+    },
+    {
+        "genre_id": "3edded95-5330-4e1c-86c6-bd5cbf0709b1",
+        "name": "Dance"
+    },
+    {
+        "genre_id": "2c4cbfec-ab48-4498-a536-34a83a9f6a12",
+        "name": "Punk"
+    },
+    {
+        "genre_id": "f5b9a743-2a79-4735-b9e6-18a35398a835",
+        "name": "Gospel"
+    },
+    {
+        "genre_id": "9845b677-268e-481f-977a-875425815e61",
+        "name": "Punk"
+    },
+    {
+        "genre_id": "8dc8996f-2b86-4255-a958-5954a05d81a3",
+        "name": "Pop"
+    }
+]
