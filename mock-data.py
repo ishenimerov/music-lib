@@ -60,7 +60,7 @@ def generate_genre(genre_id, index):
     return [genre_id, genre_name]
 
 # Define the number of records
-num_records = 1000000
+num_records = 250000
 
 # Generate unique IDs for albums, artists, and genres
 album_ids = [generate_uuid() for _ in range(num_records)]

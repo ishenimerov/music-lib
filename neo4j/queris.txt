@@ -1,0 +1,25 @@
+// Simple: Retrieves all songs in the database.
+MATCH (s:Song)
+RETURN s
+
+// Intermediate: Retrieves songs released in 2021, along with their titles, artist IDs, and release dates.
+MATCH (s:Song)
+WHERE s.release_date STARTS WITH '2021'
+RETURN s.song_title, s.artist_id, s.release_date
+
+// Complex: Retrieves songs released in 2023, along with their titles, artist names, and album names.
+MATCH (s:Song)-[:BY_ARTIST]->(a:Artist), (s)-[:IN_ALBUM]->(b:Album)
+WHERE datetime(s.release_date).year = 2023
+RETURN s.song_title, a.artist_name, b.album_name
+
+// Advanced: Retrieves songs released in 2022 by artists who have released more songs than the average number of songs per artist in the database.
+MATCH (s:Song)-[:BY_ARTIST]->(a:Artist)
+WHERE datetime(s.release_date).year = 2022
+WITH s, a
+ORDER BY s.release_date DESC
+WITH s.song_title AS song_title, a.artist_name AS artist_name, s.release_date AS release_date
+WITH song_title, artist_name, release_date, COUNT(*) AS songs_count
+WITH song_title, artist_name, release_date, songs_count, avg(songs_count) AS avg_songs_per_artist
+WHERE songs_count > avg_songs_per_artist
+RETURN song_title, artist_name, release_date
+ORDER BY release_date DESC
