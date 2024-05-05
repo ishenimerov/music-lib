@@ -7,15 +7,16 @@ conn = pymysql.connect(host='localhost', user='root', password='', db='music_lib
 cursor = conn.cursor()
 print("Connected to MySQL database!")
 
-# Function to drop tables if they exist
-def drop_tables():
-    cursor.execute("DROP TABLE IF EXISTS songs")
-    cursor.execute("DROP TABLE IF EXISTS albums")
-    cursor.execute("DROP TABLE IF EXISTS artists")
-    cursor.execute("DROP TABLE IF EXISTS genres")
+# # Function to drop tables if they exist
+# def drop_tables():
+#     cursor.execute("DROP TABLE IF EXISTS songs")
+#     cursor.execute("DROP TABLE IF EXISTS albums")
+#     cursor.execute("DROP TABLE IF EXISTS artists")
+#     cursor.execute("DROP TABLE IF EXISTS genres")
 
-# Drop tables if they exist
-drop_tables()
+# # Drop tables if they exist
+# drop_tables()
+
 # Create temporary database
 cursor.execute("CREATE DATABASE IF NOT EXISTS music_library")
 cursor.execute("USE music_library")
@@ -54,7 +55,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS genres (
                 )''')
 
 # Insert data from songs.csv
-with open('csv/songs.csv', 'r') as file:
+with open('csv100/songs.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -64,7 +65,7 @@ with open('csv/songs.csv', 'r') as file:
 print('Data inserted into songs table!')
 
 # Insert data from albums.csv
-with open('csv/albums.csv', 'r') as file:
+with open('csv100/albums.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -74,7 +75,7 @@ with open('csv/albums.csv', 'r') as file:
 print('Data inserted into albums table!')
 
 # Insert data from artists.csv
-with open('csv/artists.csv', 'r') as file:
+with open('csv100/artists.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -84,7 +85,7 @@ with open('csv/artists.csv', 'r') as file:
 print('Data inserted into artists table!')
 
 # Insert data from genres.csv
-with open('csv/genres.csv', 'r') as file:
+with open('csv100/genres.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:

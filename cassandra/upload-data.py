@@ -1,8 +1,7 @@
 from cassandra.cluster import Cluster
 from cassandra.query import BatchStatement
 import csv
-import uuid  # Add this import statement
-
+import uuid
 # Connect to Cassandra
 cluster = Cluster(['localhost'], port=9042)
 session = cluster.connect()
@@ -11,7 +10,7 @@ print('Successfully connected to Cassandra.')
 # Function to drop tables if they exist
 # def drop_tables():
 #     session.execute("USE music_library")
-#     session.execute("DROP TABLE IF EXISTS songs")
+    # session.execute("DROP TABLE IF EXISTS songs")
 #     session.execute("DROP TABLE IF EXISTS albums")
 #     session.execute("DROP TABLE IF EXISTS artists")
 #     session.execute("DROP TABLE IF EXISTS genres")
@@ -57,7 +56,7 @@ session.execute('''CREATE TABLE IF NOT EXISTS genres (
                 )''')
 
 # Insert data from songs.csv
-with open('csv/songs.csv', 'r') as file:
+with open('csv25/songs.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -72,7 +71,7 @@ with open('csv/songs.csv', 'r') as file:
 print('Data inserted into songs table!')
 
 # Insert data from albums.csv
-with open('csv/albums.csv', 'r') as file:
+with open('csv25/albums.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -87,7 +86,7 @@ with open('csv/albums.csv', 'r') as file:
 print('Data inserted into albums table!')
 
 # Insert data from artists.csv
-with open('csv/artists.csv', 'r') as file:
+with open('csv25/artists.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:
@@ -102,7 +101,7 @@ with open('csv/artists.csv', 'r') as file:
 print('Data inserted into artists table!')
 
 # Insert data from genres.csv
-with open('csv/genres.csv', 'r') as file:
+with open('csv25/genres.csv', 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data)  # Skip header row
     for row in csv_data:

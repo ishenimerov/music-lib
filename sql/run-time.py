@@ -38,7 +38,7 @@ try:
         """,
         # Query 4: Advanced query with aggregation and subqueries
         """
-         SELECT s.song_title AS song_title, a.artist_name AS artist_name, s.release_date
+        SELECT s.song_title AS song_title, a.artist_name AS artist_name, s.release_date
         FROM songs s
         JOIN artists a ON s.artist_id = a.artist_id
         WHERE YEAR(s.release_date) = 2022

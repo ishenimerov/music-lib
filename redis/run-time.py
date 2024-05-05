@@ -11,11 +11,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Create a folder named "run-time-results" if it doesn't exist
-folder_name = "run-time-results"
-folder_name = os.path.join("redis", "run-time-results")
+folder_name = "run-time-results-50"
+folder_name = os.path.join("redis", "run-time-results-50")
 if not os.path.exists(folder_name):
     os.makedirs(folder_name)
-    logger.info("Created folder 'run-time-results' inside 'redis' folder")
+    logger.info("Created folder 'run-time-results-50' inside 'redis' folder")
 
 # Define the number of times to execute the query
 num_executions = 31
@@ -90,7 +90,13 @@ with open(os.path.join(folder_name, "runtime_q4.txt"), "w") as file:
         for song in songs_2021:
             artist_id = song[b'artist_id'].decode('utf-8')
             artist_song_count[artist_id] = artist_song_count.get(artist_id, 0) + 1
-        avg_songs_per_artist = sum(artist_song_count.values()) / len(artist_song_count)
+
+        # Calculate the average number of songs per artist
+        if len(artist_song_count) > 0:
+            avg_songs_per_artist = sum(artist_song_count.values()) / len(artist_song_count)
+        else:
+            avg_songs_per_artist = 0  # or any default value you prefer
+
         # Retrieve songs where the count is greater than the average
         advanced_results = []
         for song in songs_2021:
@@ -102,14 +108,13 @@ with open(os.path.join(folder_name, "runtime_q4.txt"), "w") as file:
                 advanced_results.append({'song_title': song_title, 'artist_name': artist_name, 'release_date': release_date})
 
         # Sort the results by release date in descending order
-        print(advanced_results)
         advanced_results.sort(key=lambda x: x['release_date'], reverse=True)
         end_time = time.time()
         runtime = end_time - start_time
         # Write the runtime to the file
         file.write(f"{j+1}. {runtime:.4f} sec\n")
 
-logger.info('Query 4 done!')
+print('Query 4 done!')
 
 # Close the Redis connection
 r.close()

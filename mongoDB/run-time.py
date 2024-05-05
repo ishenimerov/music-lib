@@ -130,11 +130,11 @@ try:
     ]
 
     # Create a folder named "run-time-results" if it doesn't exist
-    folder_name = "run-time-results"
-    folder_name = os.path.join("mongoDB", "run-time-results")
+    folder_name = "run-time-results-100"
+    folder_name = os.path.join("mongoDB", "run-time-results-100")
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
-        logger.info("Created folder 'run-time-results' inside 'mongo' folder")
+        logger.info("Created folder 'run-time-results-100' inside 'mongo' folder")
 
     # Define the number of times to execute each query
     num_executions = 31

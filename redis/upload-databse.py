@@ -7,7 +7,7 @@ print('Connected to Redis container!')
 
 
 # Insert data from songs.csv into Redis
-with open('csv/songs.csv', 'r') as file:
+with open('csv50/songs.csv', 'r') as file:
     csv_data = csv.DictReader(file)
     for row in csv_data:
         song_id = row['song_id']
@@ -27,7 +27,7 @@ with open('csv/songs.csv', 'r') as file:
 print('Data inserted into Redis for songs!')
 
 # Insert data from albums.csv into Redis
-with open('csv/albums.csv', 'r') as file:
+with open('csv50/albums.csv', 'r') as file:
     csv_data = csv.DictReader(file)
     for row in csv_data:
         album_id = row['album_id']
@@ -42,7 +42,7 @@ with open('csv/albums.csv', 'r') as file:
 print('Data inserted into Redis for albums!')
 
 # Insert data from artists.csv into Redis
-with open('csv/artists.csv', 'r') as file:
+with open('csv50/artists.csv', 'r') as file:
     csv_data = csv.DictReader(file)
     for row in csv_data:
         artist_id = row['artist_id']
@@ -58,7 +58,7 @@ with open('csv/artists.csv', 'r') as file:
 print('Data inserted into Redis for artists!')
 
 # Insert data from genres.csv into Redis
-with open('csv/genres.csv', 'r') as file:
+with open('csv50/genres.csv', 'r') as file:
     csv_data = csv.DictReader(file)
     for row in csv_data:
         genre_id = row['genre_id']

@@ -82,7 +82,7 @@ for song_id in range(num_records):
     songs.append(generate_song(song_id, artist_id, album_id, genre_id))
 
 # Create a folder named "csv" if it doesn't exist
-folder_name = "csv"
+folder_name = "csv25"
 if not os.path.exists(folder_name):
     os.makedirs(folder_name)
 

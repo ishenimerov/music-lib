@@ -16,13 +16,13 @@ password = "Demo123!"
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 # Define the directory for results
-results_dir = "run-time-results"
+results_dir = "run-time-results-100"
 
 # Create results directory if it doesn't exist
-folder_name = os.path.join("neo4j", "run-time-results")
+folder_name = os.path.join("neo4j", "run-time-results-100")
 if not os.path.exists(folder_name):
     os.makedirs(folder_name)
-    logger.info("Created folder 'run-time-results' inside 'neo4j' folder")
+    logger.info("Created folder 'run-time-results-100' inside 'neo4j' folder")
 
 # Define Cypher queries
 queries = [
